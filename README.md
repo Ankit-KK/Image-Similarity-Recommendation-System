@@ -1,4 +1,3 @@
-```markdown
 # Image Similarity Recommendation System
 
 ## Overview
@@ -54,6 +53,4 @@ You can change the input image by modifying the `input_image_path` in the script
 ## Acknowledgements
 - VGG16 model pre-trained on ImageNet
 - TensorFlow & Keras for deep learning frameworks
-```
 
----
