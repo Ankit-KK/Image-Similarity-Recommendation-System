@@ -1,56 +1,76 @@
 # Image Similarity Recommendation System
 
 ## Overview
-The **Image Similarity Recommendation System** uses deep learning techniques to recommend visually similar product images based on a query image. The system utilizes a pre-trained VGG16 model for feature extraction and cosine similarity to rank and suggest the most similar images from a dataset of product images.
+This project implements an **Image Similarity Recommendation System** that identifies and recommends visually similar product images. The system supports metadata cleaning, image scraping, and similarity calculations for recommendations.
 
 ## Features
-- **Feature Extraction**: Leverages VGG16 model pre-trained on ImageNet to extract image features.
-- **Cosine Similarity**: Measures the similarity between images using cosine distance between feature vectors.
-- **Image Preprocessing**: Resizes and normalizes images for model compatibility.
-- **Visualization**: Displays the input image and the top recommended images based on similarity.
+- **Metadata Cleaning**: Handles missing or inconsistent image metadata.
+- **Image Scraping**: Scrapes images from online sources.
+  - **Without Metadata**: `Image_scrapping.py`
+  - **With Metadata**: `imageWithMetadata.py`
+- **Recommendation System**: Uses a Python program to compute image similarity.
+  - **Recommendation File**: `recommend.py`
 
 ## Technologies Used
 - Python
+- Requests
+- BeautifulSoup (for web scraping)
 - TensorFlow & Keras
-- VGG16 Pre-trained Model
-- Matplotlib for visualization
-- NumPy & SciPy for data processing
+- NumPy, SciPy
+- Matplotlib
+- Pandas
 
-## Setup
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Ankit-KK/Image-Similarity-Recommendation-System.git
+   cd Image-Similarity-Recommendation-System
+   ```
 
-### 1. Clone the Repository
+2. Install required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Prepare your image dataset and metadata files under appropriate directories.
+
+## Usage
+### 1. Cleaning Metadata
+Run the script to clean metadata of images:
 ```bash
-git clone https://github.com/ankit-kk/image-similarity-recommender.git
-cd image-similarity-recommender
+python CleaningCSVforMissingImages.py
 ```
 
-### 2. Install Required Libraries
-You can install the necessary libraries using `pip`:
-```bash
-pip install -r requirements.txt
-```
+### 2. Image Scraping
+- To scrape images **only**:
+   ```bash
+   python Image_scrapping.py
+   ```
+- To scrape images **with metadata**:
+   ```bash
+   python imageWithMetadata.py
+   ```
 
-### 3. Prepare the Data
-Ensure that your product images are stored in the `/content/product_images/product_images/` directory (or update the directory path in the code). The images should be in `.jpg` format for compatibility with the system.
-
-### 4. Running the System
-To run the recommendation system, execute the following in your terminal:
+### 3. Recommendation System
+To compute image similarity and generate recommendations:
 ```bash
 python recommend.py
 ```
 
-You can change the input image by modifying the `input_image_path` in the script.
-
 ## File Structure
-```
-/image-similarity-recommender
-│
-├── /product_images/           # Folder containing the product images
-├── requirements.txt           # Python dependencies
-└── README.md                  # Project documentation
-```
+- `CleaningCSVforMissingImages.py`: Cleans metadata and handles missing images.
+- `Image_scrapping.py`: Scrapes images without metadata.
+- `imageWithMetadata.py`: Scrapes images along with metadata.
+- `recommend.py`: Computes image similarity and recommends images.
+- `requirements.txt`: Dependency list.
+- `product_images/`: Directory for input images.
+
+  
 
 ## Acknowledgements
-- VGG16 model pre-trained on ImageNet
-- TensorFlow & Keras for deep learning frameworks
+- VGG16 pre-trained model (ImageNet)
+- TensorFlow/Keras
+- BeautifulSoup for web scraping
 
+## Author
+[Ankit-KK](https://github.com/Ankit-KK)
