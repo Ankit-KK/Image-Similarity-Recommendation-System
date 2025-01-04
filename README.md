@@ -14,6 +14,7 @@ This project implements an **Image Similarity Recommendation System** that ident
 ## Technologies Used
 - Python
 - Requests
+- -Json
 - TensorFlow & Keras
 - NumPy, SciPy
 - Matplotlib
